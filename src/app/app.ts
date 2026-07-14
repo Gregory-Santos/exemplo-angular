@@ -5,10 +5,12 @@ import { Valores } from './valores/valores';
 import { Introducao } from './introducao/introducao';
 import { PessoaComponent } from "./pessoa-component/pessoa-component";
 import { Header } from "./components/header/header";
+import { Footer } from "./components/footer/footer";
+import { SideBar } from "./components/side-bar/side-bar";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MeuComponente, Valores, Introducao, PessoaComponent, Header],
+  imports: [RouterOutlet, MeuComponente, Valores, Introducao, PessoaComponent, Header, Footer, SideBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

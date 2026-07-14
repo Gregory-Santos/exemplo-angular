@@ -1,0 +1,11 @@
+.footer-component {
+    margin: auto;
+    background-color: #4d341b;
+    padding: 16px;
+
+}
+
+.footer-component p {
+    color: #d3c2b5;
+    justify-self: center;
+}

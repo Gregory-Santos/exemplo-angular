@@ -2,9 +2,8 @@
   width: 100%;
   min-height: 78px;
   padding: 0 40px;
-  background: #50371c;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 4px 18px rgba(2, 3, 5, 0.397);
+  background: #684725;
+  box-shadow: 0 4px 18px rgba(2, 3, 5, 0.562);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
   align-items: center;
@@ -39,13 +38,13 @@
 
 .header-container nav a:hover {
   color: #ffffff;
-  background-color: #705848;
+  background-color: #694730;
   transform: translateY(-1px);
 }
 
 .header-container nav a.pagina-ativa {
   color: #ffffff;
-  background-color: #705848;
+  background-color: #422c1e;
 }
 
 @media (max-width: 650px) {
