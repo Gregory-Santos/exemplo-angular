@@ -47,7 +47,7 @@
   background-color: #422c1e;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .header-container {
     padding: 18px 20px;
     flex-direction: column;

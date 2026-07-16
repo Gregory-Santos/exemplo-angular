@@ -1,5 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 div {
     display: flex;
+    flex: 1;
     align-items: center;
     height: 100%;
+    width: 100%;
+    border: red 10px solid;
 }
