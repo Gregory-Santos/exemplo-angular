@@ -11,13 +11,16 @@
 
 .cards-container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex: 1;
+    justify-content: center;
     width: 100%;
-    border: #d3bda1 6px solid;
 }
 
 .title {
     color: #d3bda1;
+}
+
+@media only screen and (max-width: 800px) {
+    .cards-container {
+        flex-direction: column;
+    }
 }

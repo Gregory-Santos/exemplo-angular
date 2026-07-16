@@ -10,5 +10,10 @@ div {
     align-items: center;
     height: 100%;
     width: 100%;
-    border: red 10px solid;
+}
+
+@media only screen and (max-width: 800px){
+    div {
+        flex-direction: column;
+    }
 }

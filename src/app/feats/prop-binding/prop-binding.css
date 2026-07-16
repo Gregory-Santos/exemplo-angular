@@ -1,0 +1,7 @@
+.habilitado {
+    border: 6px rebeccapurple solid;
+}
+
+.nao-habilitado {
+    border: 6px green solid;
+}
