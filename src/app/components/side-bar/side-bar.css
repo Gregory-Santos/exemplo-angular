@@ -1,15 +1,44 @@
 .sidebar {
     width: 250px;
-    min-height: 80vh;
+    min-height: 100vh;
 
     background-color: #000000;
-    color: #d3bda1;
+    color: #fff9f0;
 
     display: flex;
     flex-direction: column;
 
     padding: 20px;
-    
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar nav a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  color: #ffffff;
+  background-color: #5a5a5a;
+  transform: translateY(-1px);
+}
+
+.sidebar nav a.pagina-ativa {
+  color: #ffffff;
+  background-color: #333333;
 }
 
 @media screen {
