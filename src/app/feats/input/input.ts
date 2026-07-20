@@ -8,5 +8,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './input.css',
 })
 export class Input {
-  texto=""
+  imagem: string ="";
 }

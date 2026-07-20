@@ -9,10 +9,11 @@ import { Footer } from "./components/footer/footer";
 import { SideBar } from "./components/side-bar/side-bar";
 import { Event } from "./feats/event/event";
 import { PropBinding } from './feats/prop-binding/prop-binding';
+import { Login } from './feats/login/login';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MeuComponente, Valores, Introducao, PessoaComponent, Header, Footer, SideBar, Event, PropBinding],
+  imports: [RouterOutlet, MeuComponente, Valores, Introducao, PessoaComponent, Header, Footer, SideBar, Event, PropBinding, Login],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

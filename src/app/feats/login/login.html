@@ -1,0 +1,6 @@
+<div class="login">
+    <p>Você está @if (logado) {logado} @else {deslogado}</p>
+    <button (click)="alterarLogin()">
+        @if (logado) {Deslogar} @else {Logar}
+    </button>
+</div>
