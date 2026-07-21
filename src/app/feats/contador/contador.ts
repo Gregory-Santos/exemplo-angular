@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 })
 export class Contador {
 
-  contador: number = 0;
+  protected contador: number = 0;
 
-  incrementar() {
+  protected incrementar() {
     this.contador++;
   }
 
-  resetar() {
+  protected resetar() {
     this.contador = 0;
 
 }
