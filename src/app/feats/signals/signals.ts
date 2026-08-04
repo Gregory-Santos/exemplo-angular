@@ -8,10 +8,10 @@ import { Component, signal } from '@angular/core';
 })
 export class Signals {
 
-  idade = signal(16);
+  idade = signal(12);
 
   mudarValor() {
-    this.idade.set(19)
+    this.idade.set(0)
   }
 
   incrementarIdade() {
