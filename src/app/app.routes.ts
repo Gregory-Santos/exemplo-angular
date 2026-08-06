@@ -8,6 +8,7 @@ import { Contador } from './feats/contador/contador';
 import { Login } from './feats/login/login';
 import { Signals } from './feats/signals/signals';
 import { Usuarios } from './feats/usuarios/usuarios';
+import { ExemploSignalForm } from './feats/exemplo-signal-form/exemplo-signal-form';
 
 export const routes: Routes = [
     
@@ -19,5 +20,6 @@ export const routes: Routes = [
     {path: 'login', component: Login},
     {path: 'signals', component: Signals},
     {path: 'usuarios', component: Usuarios},
+    {path: 'exemplo-signal-form', component: ExemploSignalForm},
     {path: '', redirectTo: 'casa', pathMatch: 'full'}
 ];
