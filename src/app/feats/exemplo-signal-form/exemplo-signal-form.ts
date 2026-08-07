@@ -18,19 +18,27 @@ export class ExemploSignalForm {
 
   interfaceForm = form(this.interfaceModel);
 
+  produtos = signal<Interface[]>([]);
+
 
   cadastrarProduto (event : SubmitEvent) {
     event.preventDefault();
 
     const produto = this.interfaceModel();
+
+    this.produtos.update(valor => [...valor, produto] )
+
     alert("produto foi cadastrado.")
+    
     console.log (produto)
 
-     this.interfaceModel.set ({
+    this.interfaceModel.set ({
       titulo: '',
       descricao: '',
       preco : null
     })
+  
+  
   }
-}
 
+}

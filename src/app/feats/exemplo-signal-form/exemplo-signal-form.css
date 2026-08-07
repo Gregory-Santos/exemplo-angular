@@ -1,0 +1,154 @@
+/* Página */
+:host {
+    display: block;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* =======================
+   Formulário
+======================= */
+
+.formulario {
+    width: 400px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 20px;
+}
+
+.formulario h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2d4d;
+}
+
+.formulario p {
+    margin: 15px 0 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: #b40000;
+    box-shadow: 0 0 5px rgba(180, 0, 0, .2);
+}
+
+.formulario button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #b40000;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.formulario button:hover {
+    background: #900000;
+}
+
+/* =======================
+   Lista de produtos
+======================= */
+
+.lista-produtos {
+    flex: 1;
+}
+
+.lista-produtos h2 {
+    margin-bottom: 20px;
+    color: #1f2d4d;
+}
+
+/* Grid */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+
+.card-produto {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 6px solid #b40000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .12);
+    transition: .25s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+}
+
+.card-produto h3 {
+    margin: 0 0 10px;
+    color: #1f2d4d;
+}
+
+.card-produto p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.card-produto strong {
+    color: #b40000;
+    font-size: 18px;
+}
+
+/* =======================
+   Responsivo
+======================= */
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formulario {
+        width: 100%;
+        max-width: 500px;
+        position: static;
+    }
+
+    .lista-produtos {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}

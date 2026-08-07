@@ -1,14 +1,36 @@
-<form (submit)="cadastrarProduto($event)">
+<div class="container">
 
-    <!--Título-->
-    <input type="text" [formField]="interfaceForm.titulo">
+    <div class="formulario">
+        <h1>Formulário</h1>
 
-    <!--Descrição-->
-    <input type="text" [formField]="interfaceForm.descricao">
+        <form (submit)="cadastrarProduto($event)">
+
+            <!--Título-->
+            <p>Título do produto</p>
+            <input type="text" [formField]="interfaceForm.titulo">
+
+            <!--Descrição-->
+            <p>Descrição do produto</p>
+            <input type="text" [formField]="interfaceForm.descricao">
 
 
-    <!--Preço-->
-    <input type="text" inputmode="numeric" [formField]="interfaceForm.preco">
+            <!--Preço-->
+            <p>Preço do produto</p>
+            <input type="text" inputmode="numeric" [formField]="interfaceForm.preco">
 
-    <button>Cadastrar o produto</button>
-</form>
+            <button>Cadastrar o produto</button>
+        </form>
+    </div>
+    <div class="lista-produtos">
+    <h2>Produtos cadastrados:</h2>
+
+    <div class="cards">
+        @for (produto of produtos(); track produto.titulo) {
+            <div class="card-produto">
+                <h3>{{ produto.titulo }}</h3>
+                <p>{{ produto.descricao }}</p>
+                <strong>R$ {{ produto.preco }}</strong>
+            </div>
+        }
+    </div>
+</div>

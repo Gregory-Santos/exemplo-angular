@@ -1,16 +1,14 @@
 .sidebar {
     width: 250px;
-    min-height: 100vh;
-
-    background-color: #000000;
+    height: 100%;
+    background-color: black;
     color: #fff9f0;
-
     display: flex;
     flex-direction: column;
 
     padding: 20px;
 
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .sidebar nav {
@@ -32,13 +30,13 @@
 
 .sidebar nav a:hover {
   color: #ffffff;
-  background-color: #5a5a5a;
+  background-color: #e6000048;
   transform: translateY(-1px);
 }
 
 .sidebar nav a.pagina-ativa {
   color: #ffffff;
-  background-color: #333333;
+   background-color: #ff0000a2;
 }
 
 @media screen {
