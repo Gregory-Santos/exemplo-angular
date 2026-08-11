@@ -8,6 +8,11 @@
             <!--Título-->
             <p>Título do produto</p>
             <input type="text" [formField]="interfaceForm.titulo">
+            @if (interfaceForm.titulo().touched() && interfaceForm.titulo().invalid()) {
+                @for (error of interfaceForm.titulo().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
 
             <!--Descrição-->
             <p>Descrição do produto</p>

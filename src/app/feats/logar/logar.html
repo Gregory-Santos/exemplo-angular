@@ -1,0 +1,26 @@
+<form (submit)="cadastrar($event)">
+
+            <!--Nome-->
+            <p>Nome do usuário</p>
+            <input type="text" [formField]="loginForm.nome">
+            @if (loginForm.nome().touched() && loginForm.nome().invalid()) {
+                @for (error of loginForm.nome().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+            <!--Senha-->
+            <p>Senha</p>
+            <input type="text" [formField]="loginForm.senha">
+            @if (loginForm.senha().touched() && loginForm.nome().invalid()) {
+                @for (error of loginForm.senha().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+            <button [disabled]="loginForm().invalid()">Fazer login</button>
+            
+        </form>
+
+        <p>@if (!estaLogado()) {Usuario não está logado.}
+            @else {Usuario esta logado}
+        </p>

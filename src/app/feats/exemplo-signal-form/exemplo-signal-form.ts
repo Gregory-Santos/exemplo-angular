@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Interface } from './interface';
-import { form, FormField } from '@angular/forms/signals';
+import { form, FormField, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-exemplo-signal-form',
@@ -16,7 +16,8 @@ export class ExemploSignalForm {
     preco: null
   })
 
-  interfaceForm = form(this.interfaceModel);
+  protected interfaceForm = form(this.interfaceModel , (s)=> {
+    required(s.titulo,{message: 'Preencha este campo.'})});
 
   produtos = signal<Interface[]>([]);
 
@@ -37,7 +38,6 @@ export class ExemploSignalForm {
       descricao: '',
       preco : null
     })
-  
   
   }
 
