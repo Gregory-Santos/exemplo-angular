@@ -1,19 +1,102 @@
 :host {
-    display: flex;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #17133b 50%,
+      #1e1b4b 100%
+    );
+}
+
+
+/* =========================
+   ÁREA CENTRAL
+========================= */
+
+.app-body {
+  flex: 1;
+
+  display: flex;
+
+  min-height: 0;
+  min-width: 0;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+app-side-bar {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.main-content {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #17133b 50%,
+      #1e1b4b 100%
+    );
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER / FOOTER
+========================= */
+
+app-header,
+app-footer {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media only screen and (max-width: 800px) {
+
+  .app-body {
     flex-direction: column;
-    min-height: 100vh;
-}
+  }
 
-div {
-    display: flex;
-    
-    
-    height: 100%;
+  app-side-bar {
     width: 100%;
-}
+  }
 
-@media only screen and (max-width: 800px){
-    div {
-        flex-direction: column;
-    }
+  .main-content {
+    width: 100%;
+  }
+
 }

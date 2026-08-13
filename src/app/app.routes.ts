@@ -10,6 +10,7 @@ import { Signals } from './feats/signals/signals';
 import { Usuarios } from './feats/usuarios/usuarios';
 import { ExemploSignalForm } from './feats/exemplo-signal-form/exemplo-signal-form';
 import { Logar } from './feats/logar/logar';
+import { Alunos } from './feats/alunos/alunos';
 
 export const routes: Routes = [
     
@@ -23,5 +24,6 @@ export const routes: Routes = [
     {path: 'usuarios', component: Usuarios},
     {path: 'exemplo-signal-form', component: ExemploSignalForm},
     {path: 'logar', component: Logar},
+    {path: 'alunos', component: Alunos},
     {path: '', redirectTo: 'casa', pathMatch: 'full'}
 ];

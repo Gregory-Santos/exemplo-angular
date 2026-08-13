@@ -17,7 +17,7 @@ export class Logar {
 
   loginForm = form(this.loginModel , (s)=> {
     required(s.nome,{message: 'Preencha este campo.'})
-    required(s.senha,{message: 'Preencha este campo.'});  
+    required(s.senha,{message: 'Preencha este campo.'});
   
   });
 

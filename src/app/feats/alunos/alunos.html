@@ -1,0 +1,38 @@
+<div class="alunos-container">
+
+    <h1>Você está aprovado?</h1>
+
+    <form (submit)="cadastrarAluno($event)">
+
+            <!--Nome-->
+            <p>Nome do usuário</p>
+            <input type="text" [formField]="loginForm.aluno">
+            @if (loginForm.aluno().touched() && loginForm.aluno().invalid()) {
+                @for (error of loginForm.aluno().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+            <!--Senha-->
+            <p>Média</p>
+            <input type="text" [formField]="loginForm.media">
+            @if (loginForm.media().touched() && loginForm.media().invalid()) {
+                @for (error of loginForm.media().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+            <button type="submit" [disabled]="loginForm().invalid()">Verificar média</button>
+            
+        </form>
+
+        @for (aluno of alunos(); track $index) {
+        @if (aluno.media !== null) {
+            @if (aluno.media <7) {
+                <span class="reprovado">Você está reprovado!</span>
+            }
+            @else {
+                <span class="aprovado">Você está aprovado!</span>
+            }
+            }
+        }
+</div>
