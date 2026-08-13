@@ -1,44 +1,257 @@
-.sidebar {
-    width: 250px;
-    height: 100%;
-    background-color: black;
-    color: #fff9f0;
-    display: flex;
-    flex-direction: column;
-
-    padding: 20px;
-
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+:host {
+  display: block;
 }
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+
+  padding: 25px 14px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0f172a 0%,
+      #17133b 55%,
+      #1e1b4b 100%
+    );
+
+  border-right: 1px solid rgba(139, 92, 246, 0.15);
+
+  box-shadow:
+    8px 0 30px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   BRILHO DECORATIVO
+========================= */
+
+.sidebar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: 5%;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  opacity: 0.10;
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
 
 .sidebar nav {
+  position: relative;
+  z-index: 1;
+
   display: flex;
+
   flex-direction: column;
-  gap: 12px;
+
+  gap: 7px;
 }
+
+
+/* =========================
+   LINKS
+========================= */
 
 .sidebar nav a {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 13px 16px;
+
+  box-sizing: border-box;
+
+  border-radius: 10px;
+
+  color: #94a3b8;
+
   text-decoration: none;
 
-  padding: 10px 16px;
-  border-radius: 8px;
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  font-family:
+    'Inter',
+    'Segoe UI',
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
 }
+
+
+/* =========================
+   HOVER
+========================= */
 
 .sidebar nav a:hover {
   color: #ffffff;
-  background-color: #e6000048;
-  transform: translateY(-1px);
+
+  background:
+    rgba(139, 92, 246, 0.12);
+
+  transform: translateX(4px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
 }
+
+
+/* =========================
+   PÁGINA ATIVA
+========================= */
 
 .sidebar nav a.pagina-ativa {
   color: #ffffff;
-   background-color: #ff0000a2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.28),
+      rgba(139, 92, 246, 0.10)
+    );
+
+  box-shadow:
+    inset 0 0 20px rgba(99, 102, 241, 0.06),
+    0 5px 20px rgba(99, 102, 241, 0.08);
 }
 
-@media screen {
-    
+
+/* Barra roxa ao lado */
+
+.sidebar nav a.pagina-ativa::before {
+  content: "";
+
+  position: absolute;
+
+  left: -14px;
+
+  top: 50%;
+
+  width: 4px;
+  height: 28px;
+
+  transform: translateY(-50%);
+
+  border-radius: 0 5px 5px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #6366f1,
+      #a855f7
+    );
+
+  box-shadow:
+    0 0 12px rgba(139, 92, 246, 0.8);
+}
+
+
+/* =========================
+   EFEITO DE CLIQUE
+========================= */
+
+.sidebar nav a:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.sidebar nav {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #6366f1
+    transparent;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 190px;
+
+    padding: 20px 10px;
+  }
+
+  .sidebar nav a {
+    padding: 12px;
+
+    font-size: 13px;
+  }
+
+  .sidebar nav a.pagina-ativa::before {
+    left: -10px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .sidebar {
+    width: 70px;
+
+    padding: 20px 8px;
+  }
+
+  .sidebar nav {
+    gap: 8px;
+  }
+
+  .sidebar nav a {
+    justify-content: center;
+
+    padding: 13px 5px;
+
+    font-size: 0;
+  }
+
+  .sidebar nav a.pagina-ativa::before {
+    left: -8px;
+
+    width: 3px;
+  }
 }

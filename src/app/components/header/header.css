@@ -1,23 +1,168 @@
-.header-container {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.411)),
-        url("../../../../public/img/baixos.avif") center/cover no-repeat;
-
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.404);
+:host {
+  display: block;
+  width: 100%;
 }
 
-.header-container h1 {
-    margin: 0;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 800;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-transform: uppercase;
-    text-shadow: 0 4px 10px rgba(0,0,0,.5);
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-component {
+  position: relative;
+
+  width: 100%;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px 30px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #17133b 50%,
+      #1e1b4b 100%
+    );
+
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+
+  box-shadow:
+    0 -8px 30px rgba(0, 0, 0, 0.20);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   BRILHO DECORATIVO
+========================= */
+
+.footer-component::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 100px;
+
+  left: 50%;
+  bottom: -80px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  opacity: 0.15;
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   LINHA SUPERIOR
+========================= */
+
+.footer-component::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #6366f1,
+      #a855f7,
+      transparent
+    );
+
+  opacity: 0.7;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.footer-component p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-family:
+    'Inter',
+    'Segoe UI',
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.footer-component:hover p {
+  color: #c4b5fd;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   DESTAQUE NO NOME
+========================= */
+
+.footer-component p::first-letter {
+  color: #a78bfa;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 600px) {
+
+  .footer-component {
+    min-height: 65px;
+
+    padding: 18px 15px;
+  }
+
+  .footer-component p {
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
 }
