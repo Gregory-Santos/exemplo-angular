@@ -18,25 +18,24 @@ export class Alunos {
   protected alunos = signal<Aluno[]>([])
 
   protected loginForm = form(this.loginModel , (s)=> {
-    
     required(s.aluno,{message: 'Preencha este campo.'});
     required(s.media,{message: 'Preencha este campo.'});
     min(s.media, 0, {message: 'Você deve ter uma média maior que 0.'});
     max(s.media, 10, {message: 'Você deve ter uma média até 10.'});
   })
   
-  cadastrarAluno (event : SubmitEvent) {
+  protected cadastrarAluno (event : SubmitEvent) {
     event.preventDefault();
 
     const aluno = this.loginModel();
 
     this.alunos.update(valor => [...valor, aluno] )
     
-    console.log (aluno)
-
     this.loginModel.set ({
       aluno: '',
       media: null
     })
+
+    this.loginForm().reset();
 }
 }

@@ -1,1 +1,44 @@
-<p>cadastro works!</p>
+<form (submit)="cadastrar"(event)>
+
+    <!--Nome-->
+            <p>Nome completo</p>
+            <input type="text" placeholder="Nome completo" [formField]="loginForm.nome">
+            @if (loginForm.nome().touched() && loginForm.nome().invalid()) {
+                @for (error of loginForm.nome().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+    <!--Email-->
+            <p>Email</p>
+            <input type="text" placeholder="Nome completo" [formField]="loginForm.email">
+            @if (loginForm.email().touched() && loginForm.email().invalid()) {
+                @for (error of loginForm.nome().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+    <!--Senha-->
+            <p>Senha</p>
+            <input type="text" placeholder="Senha" [formField]="loginForm.senha">
+            @if (loginForm.senha().touched() && loginForm.senha().invalid()) {
+                @for (error of loginForm.senha().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+    <!--Confirmação de senha-->
+            <p>Confimação de senha</p>
+            <input type="text" placeholder="Confimação de senha" [formField]="loginForm.confirmarSenha"
+            @if (loginForm.confenha().touched() && loginForm.senha().invalid()) {
+                @for (error of loginForm.confirmarSenha().errors(); track error.kind) {
+                    <span></span>
+                }
+            }
+
+
+
+
+
+
+</form>

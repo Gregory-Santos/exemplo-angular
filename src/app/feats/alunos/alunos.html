@@ -5,8 +5,8 @@
     <form (submit)="cadastrarAluno($event)">
 
             <!--Nome-->
-            <p>Nome do usuário</p>
-            <input type="text" [formField]="loginForm.aluno">
+            <p>Nome do aluno</p>
+            <input type="text" placeholder="Nome do aluno" [formField]="loginForm.aluno">
             @if (loginForm.aluno().touched() && loginForm.aluno().invalid()) {
                 @for (error of loginForm.aluno().errors(); track error.kind) {
                     <span>{{error.message}}</span>
@@ -15,7 +15,7 @@
 
             <!--Senha-->
             <p>Média</p>
-            <input type="text" [formField]="loginForm.media">
+            <input type="text" placeholder="Média" [formField]="loginForm.media">
             @if (loginForm.media().touched() && loginForm.media().invalid()) {
                 @for (error of loginForm.media().errors(); track error.kind) {
                     <span>{{error.message}}</span>
@@ -26,13 +26,20 @@
         </form>
 
         @for (aluno of alunos(); track $index) {
+        <div class="resultado">
+
+        <p><strong>Nome:</strong> {{aluno.aluno}}</p>
+        <p><strong>Média:</strong> {{aluno.media}}</p>
+
         @if (aluno.media !== null) {
-            @if (aluno.media <7) {
+            @if (aluno.media < 7) {
                 <span class="reprovado">Você está reprovado!</span>
             }
             @else {
                 <span class="aprovado">Você está aprovado!</span>
             }
-            }
         }
+
+    </div>
+}
 </div>

@@ -9,7 +9,7 @@
 .sidebar {
   width: 230px;
   min-height: 100vh;
-
+  max-width: 100%;
   padding: 25px 14px;
 
   box-sizing: border-box;

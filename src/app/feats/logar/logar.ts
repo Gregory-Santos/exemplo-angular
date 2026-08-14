@@ -10,12 +10,13 @@ import { Login } from './login';
 })
 export class Logar {
 
+/**/
   protected loginModel = signal<Login>({
     nome: '',
     senha: '',
   })
 
-  loginForm = form(this.loginModel , (s)=> {
+  protected loginForm = form(this.loginModel , (s)=> {
     required(s.nome,{message: 'Preencha este campo.'})
     required(s.senha,{message: 'Preencha este campo.'});
   

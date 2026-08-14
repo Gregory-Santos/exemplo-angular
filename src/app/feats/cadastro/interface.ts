@@ -1,9 +1,11 @@
 export interface Interface {
-    nomeCompleto: string;
+
+    nome: string;
     email: string;
     senha: string;
-    confSenha: string;
+    confirmarSenha: string;
     dataNascimento: string;
+
 }
 
 /*5) 

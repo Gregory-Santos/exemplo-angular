@@ -1,8 +1,8 @@
 <form (submit)="cadastrar($event)">
 
             <!--Nome-->
-            <p>Nome do usuário</p>
-            <input type="text" [formField]="loginForm.nome">
+        <p>Nome do usuário</p>
+        <input type="text" placeholder="Nome do usu" [formField]="loginForm.nome">
             @if (loginForm.nome().touched() && loginForm.nome().invalid()) {
                 @for (error of loginForm.nome().errors(); track error.kind) {
                     <span>{{error.message}}</span>
@@ -10,14 +10,14 @@
             }
 
             <!--Senha-->
-            <p>Senha</p>
-            <input type="text" [formField]="loginForm.senha">
+        <p>Senha</p>
+        <input type="text" placeholder="Média" [formField]="loginForm.senha">
             @if (loginForm.senha().touched() && loginForm.nome().invalid()) {
                 @for (error of loginForm.senha().errors(); track error.kind) {
                     <span>{{error.message}}</span>
                 }
             }
-            <button [disabled]="loginForm().invalid()">Fazer login</button>
+        <button [disabled]="loginForm().invalid()">Fazer login</button>
             
         </form>
 
