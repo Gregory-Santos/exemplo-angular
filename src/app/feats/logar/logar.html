@@ -2,7 +2,7 @@
 
             <!--Nome-->
         <p>Nome do usuário</p>
-        <input type="text" placeholder="Nome do usu" [formField]="loginForm.nome">
+        <input type="text" placeholder="Nome do usuário" [formField]="loginForm.nome">
             @if (loginForm.nome().touched() && loginForm.nome().invalid()) {
                 @for (error of loginForm.nome().errors(); track error.kind) {
                     <span>{{error.message}}</span>
@@ -11,7 +11,7 @@
 
             <!--Senha-->
         <p>Senha</p>
-        <input type="text" placeholder="Média" [formField]="loginForm.senha">
+        <input type="text" placeholder="Senha" [formField]="loginForm.senha">
             @if (loginForm.senha().touched() && loginForm.nome().invalid()) {
                 @for (error of loginForm.senha().errors(); track error.kind) {
                     <span>{{error.message}}</span>
@@ -21,6 +21,6 @@
             
         </form>
 
-        <p>@if (!estaLogado()) {Usuario não está logado.}
-            @else {Usuario está logado.}
+        <p>@if (!estaLogado()) {Usuário não está logado.}
+            @else {Usuário está logado.}
         </p>

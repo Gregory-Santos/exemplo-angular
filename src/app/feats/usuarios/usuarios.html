@@ -1,4 +1,4 @@
-@for (usuario of usuarios(); track usuario.id) {
+@for (usuario of usuarioService.usuarios(); track usuario.id) {
 
     <div class="card" style="width: 18rem;">
          <img [src]=usuario.img class="card-img-top" alt="...">

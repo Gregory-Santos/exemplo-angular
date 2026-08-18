@@ -1,6 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { form, required, FormField } from '@angular/forms/signals';
 import { Login } from './login';
+import { UsuariosService } from '../usuarios/usuarios-service';
+import { LogarService } from './logar-service';
 
 @Component({
   selector: 'app-logar',
@@ -10,7 +12,8 @@ import { Login } from './login';
 })
 export class Logar {
 
-/**/
+  protected readonly logarService = inject(LogarService);
+
   protected loginModel = signal<Login>({
     nome: '',
     senha: '',
@@ -22,19 +25,20 @@ export class Logar {
   
   });
 
-    
-
     usuarios = signal<Login[]>([]);
 
     estaLogado = signal<boolean>(false)
+    
 
   cadastrar (event : SubmitEvent) {
     event.preventDefault();
 
     const usuario = this.loginModel();
-    if (usuario.nome === "gregory@email.com" && usuario.senha === '123') {
-      this.estaLogado.set(true) 
-    }
+    
+    this.estaLogado.set (
+      this.logarService.validarGregory(usuario)
+    )
+
     this.loginModel.set ({
       nome: '',
       senha: '',

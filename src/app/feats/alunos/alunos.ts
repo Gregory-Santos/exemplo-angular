@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Aluno } from './aluno';
 import { form, FormField, max, min, required } from "@angular/forms/signals";
+import { AlunosService } from './alunos-service';
 
 @Component({
   selector: 'app-alunos',
@@ -10,12 +11,14 @@ import { form, FormField, max, min, required } from "@angular/forms/signals";
 })
 export class Alunos {
 
+  protected readonly cadastroAlunosService = inject(AlunosService);
+
    protected loginModel = signal<Aluno>({
     aluno: '',
     media: null
   })
 
-  protected alunos = signal<Aluno[]>([])
+  // protected alunos = signal<Aluno[]>([])
 
   protected loginForm = form(this.loginModel , (s)=> {
     required(s.aluno,{message: 'Preencha este campo.'});
@@ -29,7 +32,7 @@ export class Alunos {
 
     const aluno = this.loginModel();
 
-    this.alunos.update(valor => [...valor, aluno] )
+    this.cadastroAlunosService.cadastrarAluno(aluno);
     
     this.loginModel.set ({
       aluno: '',
