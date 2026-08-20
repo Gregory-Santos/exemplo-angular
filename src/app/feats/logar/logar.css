@@ -1,68 +1,110 @@
-/* ================================
-   CONTAINER PRINCIPAL
-================================ */
-
 :host {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
 
-  min-height: 100vh;
-  width: 100%;
+    flex-direction: column;
 
-  padding: 20px;
-  box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
 
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    width: 100%;
 
-  background:
-    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.35), transparent 30%),
-    radial-gradient(circle at 85% 80%, rgba(168, 85, 247, 0.35), transparent 30%),
-    linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+    padding: 30px;
+    box-sizing: border-box;
+
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(99, 102, 241, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(168, 85, 247, 0.30),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #090b18,
+            #11132b,
+            #1e1b4b
+        );
 }
 
 
-/* ================================
+/* =================================
    FORMULÁRIO
-================================ */
+================================= */
 
 form {
-  width: 100%;
-  max-width: 420px;
+  position: relative;
 
-  padding: 40px;
+  width: 100%;
+  max-width: 430px;
+
+  padding: 42px;
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 26px;
 
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.08);
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 
   box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
 
-  animation: aparecer 0.6s ease;
+  animation: aparecer 0.7s ease;
 }
 
 
-/* ================================
-   TÍTULOS / LABELS
-================================ */
+/* Brilho superior do formulário */
+
+form::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #818cf8,
+    #a78bfa,
+    transparent
+  );
+
+  box-shadow:
+    0 0 15px rgba(129, 140, 248, 0.7);
+}
+
+
+/* =================================
+   LABELS
+================================= */
 
 form p {
-  margin: 20px 0 8px;
+  margin: 22px 0 8px;
 
-  color: #e2e8f0;
+  color: #cbd5e1;
 
   font-size: 14px;
   font-weight: 600;
 
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
 }
 
 form p:first-child {
@@ -70,23 +112,23 @@ form p:first-child {
 }
 
 
-/* ================================
+/* =================================
    INPUTS
-================================ */
+================================= */
 
 input {
   width: 100%;
 
-  padding: 14px 16px;
+  padding: 15px 17px;
 
   box-sizing: border-box;
 
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
 
   outline: none;
 
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(7, 10, 25, 0.65);
 
   color: #ffffff;
 
@@ -95,43 +137,51 @@ input {
   transition:
     border-color 0.25s ease,
     box-shadow 0.25s ease,
-    transform 0.2s ease,
-    background 0.25s ease;
+    background 0.25s ease,
+    transform 0.2s ease;
 }
 
 
 /* Placeholder */
 
 input::placeholder {
-  color: #94a3b8;
+  color: #64748b;
+
+  transition: color 0.25s ease;
 }
 
 
-/* Quando clicar no input */
+/* Focus */
 
 input:focus {
   border-color: #818cf8;
 
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(7, 10, 25, 0.85);
 
   box-shadow:
-    0 0 0 4px rgba(129, 140, 248, 0.15),
-    0 0 20px rgba(99, 102, 241, 0.15);
+    0 0 0 4px rgba(129, 140, 248, 0.10),
+    0 0 25px rgba(99, 102, 241, 0.15);
 
   transform: translateY(-1px);
 }
 
+input:focus::placeholder {
+  color: #94a3b8;
+}
 
-/* ================================
-   MENSAGENS DE ERRO
-================================ */
+
+/* =================================
+   ERROS DE VALIDAÇÃO
+================================= */
 
 form span {
   display: block;
 
   margin-top: 7px;
 
-  color: #fca5a5;
+  padding-left: 3px;
+
+  color: #fda4af;
 
   font-size: 12px;
   font-weight: 500;
@@ -140,19 +190,23 @@ form span {
 }
 
 
-/* ================================
+/* =================================
    BOTÃO
-================================ */
+================================= */
 
 button {
+  position: relative;
+
   width: 100%;
 
-  margin-top: 28px;
+  margin-top: 30px;
 
-  padding: 14px 20px;
+  padding: 15px 20px;
 
   border: none;
-  border-radius: 12px;
+  border-radius: 13px;
+
+  overflow: hidden;
 
   cursor: pointer;
 
@@ -161,40 +215,78 @@ button {
   font-size: 15px;
   font-weight: 700;
 
+  letter-spacing: 0.3px;
+
   background: linear-gradient(
     135deg,
     #6366f1,
+    #7c3aed,
     #8b5cf6
   );
 
   box-shadow:
-    0 10px 25px rgba(99, 102, 241, 0.35);
+    0 10px 30px rgba(99, 102, 241, 0.35);
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    opacity 0.2s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* Brilho passando pelo botão */
+
+button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.20),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+
+button:hover:not(:disabled)::before {
+  left: 130%;
 }
 
 
 /* Hover */
 
 button:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 
   box-shadow:
-    0 15px 30px rgba(99, 102, 241, 0.45);
+    0 15px 35px rgba(99, 102, 241, 0.50),
+    0 0 20px rgba(139, 92, 246, 0.15);
 }
 
 
 /* Clique */
 
 button:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(99, 102, 241, 0.35);
 }
 
 
-/* Botão desabilitado */
+/* Desabilitado */
 
 button:disabled {
   cursor: not-allowed;
@@ -203,99 +295,123 @@ button:disabled {
 
   background: linear-gradient(
     135deg,
-    #475569,
-    #64748b
+    #334155,
+    #475569
   );
 
   box-shadow: none;
 }
 
 
-/* ================================
+/* =================================
    STATUS DO LOGIN
-================================ */
+================================= */
 
 :host > p {
-  position: fixed;
+    margin: 25px 0 0;
 
-  bottom: 25px;
-  left: 50%;
+    padding: 11px 20px;
 
-  transform: translateX(-50%);
+    border-radius: 999px;
 
-  margin: 0;
+    color: #e2e8f0;
 
-  padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
 
-  border-radius: 999px;
+    background: rgba(10, 13, 30, 0.75);
 
-  color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
-  font-size: 14px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
-  background: rgba(15, 23, 42, 0.75);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
 
-  backdrop-filter: blur(10px);
+    animation: aparecer 0.5s ease;
+}
 
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25);
+/* =================================
+   USUÁRIO LOGADO
+================================= */
+
+.Logado {
+  color: #86efac;
+
+  text-shadow:
+    0 0 10px rgba(74, 222, 128, 0.25);
 }
 
 
-/* ================================
+/* =================================
    ANIMAÇÕES
-================================ */
+================================= */
 
 @keyframes aparecer {
+
   from {
     opacity: 0;
-    transform: translateY(25px) scale(0.97);
+
+    transform:
+      translateY(30px)
+      scale(0.96);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform:
+      translateY(0)
+      scale(1);
   }
+
 }
 
 
 @keyframes erro {
+
   from {
     opacity: 0;
-    transform: translateX(-5px);
+
+    transform:
+      translateX(-6px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+
+    transform:
+      translateX(0);
   }
+
 }
 
 
-/* ================================
+/* =================================
    RESPONSIVIDADE
-================================ */
+================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
   :host {
-    padding: 15px;
+    padding: 20px;
   }
 
   form {
-    padding: 30px 22px;
+    padding: 32px 24px;
 
-    border-radius: 20px;
+    border-radius: 22px;
   }
 
   input {
-    padding: 13px 14px;
+    padding: 14px;
   }
 
   button {
-    padding: 13px;
+    padding: 14px;
   }
 
   :host > p {
@@ -303,4 +419,5 @@ button:disabled {
 
     font-size: 12px;
   }
+
 }

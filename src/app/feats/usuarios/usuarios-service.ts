@@ -4,7 +4,7 @@ import { Usuario } from './usuario';
 @Service()
 export class UsuariosService {
 
-      usuarios = signal<Usuario[]>([
+  readonly usuarios = signal<Usuario[]>([
     {
       id: 1,
       nome: 'Gregory',

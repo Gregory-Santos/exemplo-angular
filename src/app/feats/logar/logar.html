@@ -11,8 +11,8 @@
 
             <!--Senha-->
         <p>Senha</p>
-        <input type="text" placeholder="Senha" [formField]="loginForm.senha">
-            @if (loginForm.senha().touched() && loginForm.nome().invalid()) {
+        <input type="password" placeholder="Senha" [formField]="loginForm.senha">
+            @if (loginForm.senha().touched() && loginForm.senha().invalid()) {
                 @for (error of loginForm.senha().errors(); track error.kind) {
                     <span>{{error.message}}</span>
                 }
@@ -21,6 +21,6 @@
             
         </form>
 
-        <p>@if (!estaLogado()) {Usuário não está logado.}
-            @else {Usuário está logado.}
+        <p>@if (!estaLogado()) {<span class="naoLogado">Usuário não está logado.</span>}
+            @else {<span class="Logado">Usuário está logado.</span>}
         </p>

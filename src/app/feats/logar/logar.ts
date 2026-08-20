@@ -16,7 +16,7 @@ export class Logar {
 
   protected loginModel = signal<Login>({
     nome: '',
-    senha: '',
+    senha: ''
   })
 
   protected loginForm = form(this.loginModel , (s)=> {
@@ -30,7 +30,7 @@ export class Logar {
     estaLogado = signal<boolean>(false)
     
 
-  cadastrar (event : SubmitEvent) {
+  protected cadastrar (event : SubmitEvent) {
     event.preventDefault();
 
     const usuario = this.loginModel();
@@ -41,7 +41,8 @@ export class Logar {
 
     this.loginModel.set ({
       nome: '',
-      senha: '',
+      senha: ''
     })
 
+    this.loginForm().reset()
   }}

@@ -1,12 +1,13 @@
 @for (usuario of usuarioService.usuarios(); track usuario.id) {
 
-    <div class="card" style="width: 18rem;">
-         <img [src]=usuario.img class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text">
-        <h1>id: {{usuario.id}}</h1>
-        <p>nome: {{usuario.nome}}</p>
-        <p>idade: {{usuario.idade}}</p>
+    <div class="card">
+        <img [src]="usuario.img" class="card-img-top" alt="Foto do usuário">
+
+        <div class="card-body">
+            <h2>Id: {{ usuario.id }}</h2>
+            <p>Nome: {{ usuario.nome }}</p>
+            <p>Idade: {{ usuario.idade }}</p>
+        </div>
     </div>
-    </div>
+
 }
