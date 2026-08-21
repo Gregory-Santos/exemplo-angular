@@ -1,0 +1,36 @@
+<form (submit)="cadastrarPost($event)">
+
+            <!--Nome-->
+        <p>Id do usuário</p>
+        <input type="text" placeholder="Nome do usuário" [formField]="loginForm.userId">
+            @if (loginForm.userId().touched() && loginForm.userId().invalid()) {
+                @for (error of loginForm.userId().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+            <!--Title-->
+        <p>Title</p>
+        <input type="text" placeholder="Senha" [formField]="loginForm.title">
+            @if (loginForm.title().touched() && loginForm.title().invalid()) {
+                @for (error of loginForm.title().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+            <!--Body-->
+        <p>Body</p>
+        <input type="text" placeholder="Senha" [formField]="loginForm.body">
+            @if (loginForm.body().touched() && loginForm.body().invalid()) {
+                @for (error of loginForm.body().errors(); track error.kind) {
+                    <span>{{error.message}}</span>
+                }
+            }
+
+        <button [disabled]="loginForm().invalid()">Fazer login</button>
+            
+        </form>
+
+        <p>@if (!ca()) {<span class="naoLogado">Usuário não está logado.</span>}
+            @else {<span class="Logado">Usuário está logado.</span>}
+        </p>
